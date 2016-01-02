@@ -1,0 +1,1449 @@
+//
+//  main.cpp
+//  Final Project
+//
+//  Created by Thomas Stagnaro on 12/18/15.
+//  Copyright © 2015 Thomas Stagnaro and Devon Halseth. All rights reserved.
+//
+
+# include <iostream>
+# include <iomanip>
+# include <string>
+# include <cstdlib>
+using namespace std;
+
+// Function Prototypes
+void exercises();
+void progressHistory();
+void doctorCommunicationCenter();
+void personalProfile();
+void shoulder();
+void quadset();
+void elbow();
+void ankle();
+void glutSet();
+void straightLegRaiseEx();
+void bridge();
+void singleBridge();
+void comingSoon();
+void hamstringSet();
+void hamstringCurl();
+void ballSlides();
+void stoolScoots();
+void clearScreen();
+void painScale();
+void saveProgress();
+void saveProgressHome();
+void anklePumps();
+void straightLegRaise();
+// Still needs to be created
+void quadSet(); //goes to pain > anklepumps, no pain, straigtlegraiseflex
+void straightLegRaiseFlex(); // pain > ankle pumps, no pain clamshells
+void clamShells(); // pain > ankle pumps, no pain heel slides
+void heelSlides(); // goes to ankle pumps
+void anklePumps(); // pain to glute set, no pain anklecircles
+void ankleCircles(); // pain to glut set, no pain shortarcquad
+void shorArcQuad(); // pain glut set, no pain long arc quad
+void longArcQuad(); //goes to glut set
+
+int main()
+{
+    
+    
+    
+    // Variables
+    int topic, bodyPart;
+    
+    // A banner should have "You have completed XX% of your doctors prescribed
+    // exercise plan over the past XX days" displayed over the top of the first menu.
+    
+    //Calls the clear screen function and outputs a menu for the user to select their option
+    clearScreen();
+    cout << "\n----Menu Options----\n\n";
+    cout << "1. Exercises\n\n";
+    cout << "2. Progress History\n\n";
+    cout << "3. Doctor Communication Center\n\n";
+    cout << "4. Personal Profile\n\n";
+    cout << "5. Quit\n";
+    cin >> topic;
+    while (topic > 5 || topic < 1)
+    {
+        cout << "Please select 1 through 5";
+        cin >> topic;
+    }
+    
+    // This is code to select from the main menu.
+    
+    switch (topic)
+    {
+        case 1: cout << "1. Exercises\n";           // If this were an app, we would need a way for this message to display on the screen for a moment before disapearing.
+            exercises();                            //Call Exercises
+            break;
+        case 2: cout << "2. Progress History\n";
+            //        progressHistory();
+            comingSoon();
+            break;
+        case 3: cout << "3. Doctor Communication Center\n";
+            //        doctorCommunicationCenter();
+            comingSoon();
+            break;
+        case 4: cout << "4. Personal Profile\n";
+            //        personalProfile();
+            comingSoon();
+            break;
+        case 5: exit(0);
+    }
+    //*******************************************************************
+    //  Definition of function Exercises
+    //  This function enables the user to exercise a specific body part.
+    //  The physical therapist is to build the exercise regiment and
+    //  load it into this function. The user selects the body part that
+    //  applies to their ailment and procedes with the exercises.
+    //  This function provides a demonstration video to correctly perform
+    //  the exercise. After the user completes the exercise the user is
+    //  prompted to provide feedback on the pain and fatigue he or she
+    //  experienced. The pain and fatigue response is recorded in the
+    //  progress history function.
+    //********************************************************************
+    
+    
+    
+    
+    //***************************************************************************
+    //  Definition of function Progress History
+    //  The progress history function is to record and display the exercise
+    //  summary of each body part to include the number of sets and corrosponding
+    //  pain and fatigue level. Find a way to display this on a graph to show
+    //  progress over a month or a year etc.
+    //***************************************************************************
+    
+    return 0;
+}
+
+
+void clearScreen() //this is for clearing the screen between functions
+{
+    cout << string(100, '\n' );
+}
+void exercises() // this is for the exercises sub menu
+{   //
+    int bodypart, choice;
+    clearScreen();
+    cout << "\n----Select a prescribed exercise----\n\n";
+    cout << "1. Knee\n\n";
+    cout << "2. Elbow\n\n";
+    cout << "3. Shoulder\n\n";
+    cout << "4. Ankle\n\n";
+    cout << "5. Save progress\n\n";
+    cout << "6. Save progress/Return to home\n";
+    cin >> bodypart;
+    
+    while (bodypart > 6 || bodypart < 1) // input validation
+    {
+        cout << "Please select 1 through 6";
+        cin >> choice;
+    }
+    
+    // A banner should have "You have completed XX% of your doctors prescribed
+    // exercise plan over the past XX days" displayed over the top of the first menu.
+    
+    switch (bodypart) // switch statement once you've selected to body part to work on
+    {
+        case 1: cout << "\n\nKnee. Let's kick it into gear!\n";
+            sleep(1);   //sleep is used to pause the program for 1 second before transitioning to the next function
+            quadset();
+            break;
+            
+        case 2: cout << "\n\nElbow. Get ready to feel the burn!\n";
+            sleep(1);
+            comingSoon(); // placeholder for future content
+            break;
+            
+        case 3: cout << "\n\nShoulder. Let's kick it into gear!\n";
+            sleep(1);
+            comingSoon();
+            break;
+            
+        case 4: cout << "\n\nAnkle. Boom....this is happening.\n";
+            sleep(1);
+            comingSoon();
+            break;
+            
+        case 5: cout << "\n\nYour progress has been saved.";     // How do you save progress by writing to a file that is stored on a computer?, possibly                            //a count variable
+            sleep(1);
+            main();
+            // This needs to be stored in the Progress History function.
+            
+        default :
+            cout << "\n\nThe valid choices are 1 through 4, ding dong.\n";
+    }
+}
+
+//*********************************************************************
+//  Definition of function knee
+//  This function should first show a demonstration via a video of how
+//  to correctly perform an exercise. Then, after the completion of
+//  each exercise set, the program prompts the user to enter how much
+//  fatigue and pain he or she experienced.
+//  I want to use an array to record the fatigue and pain after each set.
+//  I want to send the pain and fatigue level and exercise summary to the
+//  progress history function.
+//********************************************************************
+
+
+void comingSoon() // lets the user know that the feature they selected is in development and prompts the user to
+// press the enter button
+{
+    cout << "\n\n\n\n\nFeature in development!  Press enter to continue." << endl;
+    cin.ignore();
+    cin.get();
+    main();
+}
+void quadset()
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Quad Set exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Quad Set demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/quadset.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Quad Sets: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You couldn't hang with the pain so we're going to do something easier\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                anklePumps();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                straightLegRaiseFlex();
+            }
+            break;
+        }           }
+}
+
+
+
+
+void straightLegRaiseFlex() // pain > ankle pumps, no pain clamshells
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Straight Leg Raise exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Straight Leg Raise demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/straightLegRaise.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Straight Leg Raise: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You couldn't hang with the pain so we're going to do something easier\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                anklePumps();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                clamShells();
+            }
+            break;
+        }           }
+}
+void clamShells() // pain > ankle pumps, no pain heel slides
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Clam Shells exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Clam Shell demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/clamShells.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Clam Shells: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You couldn't hang with the pain so we're going to do something easier\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                anklePumps();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                heelSlides();
+            }
+            break;
+        }           }
+}
+void heelSlides() // goes to ankle pumps
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Heel Slides exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Heel Slide demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";            cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/longArcQuad.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Heel Slides: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You almost made it but were being kind of a wuss.\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                anklePumps();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                anklePumps();
+            }
+            break;
+        }           }
+}
+void anklePumps() // pain to glute set, no pain anklecircles
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Ankle Pumps exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Ankle Pump demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/shortArcQuad.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Ankle Pump: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You couldn't hang with the pain so we're going to do something easier\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                glutSet();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                ankleCircles();
+            }
+            break;
+        }           }
+}
+void ankleCircles() // pain to glut set, no pain shortarcquad
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Ankle Circles exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Ankle Circle demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/bridge.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Ankle Circles: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You couldn't hang with the pain so we're going to do something easier\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                glutSet();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                ankleCircles();
+            }
+            break;
+        }           }
+}
+void shorArcQuad() // pain glut set, no pain long arc quad
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Short Arc Quad exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Short Arc Quad demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/shortArcQuad.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Short Arc Quad: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You couldn't hang with the pain so we're going to do something easier\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                glutSet();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                longArcQuad();
+            }
+            break;
+        }           }
+}
+void longArcQuad() //goes to glut set
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Short Arc Quad exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Short Arc Quad demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/longArcQuad.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Long Arc Quad: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You almost made it but were being kind of a wuss.\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                glutSet();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                glutSet();
+            }
+            break;
+        }           }
+}
+
+void glutSet() //hamstringset, no pain straightlegraiseex
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Glut Set exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Short Arc Quad demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/quadset.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Quad Set: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You couldn't hang with the pain so we're going to do something easier\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                hamstringSet();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                straightLegRaise();
+            }
+            break;
+        }           }
+}
+
+void straightLegRaise()
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Glut Set exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Short Arc Quad demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/quadset.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Quad Set: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You couldn't hang with the pain so we're going to do something easier\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                hamstringSet();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                bridge();
+            }
+            break;
+        }           }
+}
+
+void bridge()
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Bridge exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Bridge demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/bridge.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Bridge: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You couldn't hang with the pain so we're going to do something easier\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                hamstringSet();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                singleBridge();
+            }
+            break;
+        }           }
+}
+
+
+void singleBridge()
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Single Bridge exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Single Bridge demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/legstraight.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Single Bridge: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "Toughen up, cry baby\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                hamstringSet();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                hamstringSet();
+            }
+            break;
+        }           }
+}
+
+void hamstringSet()//done, hamstringCurl
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Hamstring Set exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Hamstring Set demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/hammy.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Hamstring Set: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You're done, try harder next time\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                main();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                hamstringCurl();
+            }
+            break;
+        }           }
+}
+
+void hamstringCurl()
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Hamstring Curl exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Hamstring Curl demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/hamstringCurl.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Hamstring Curl: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You're done, try harder next time\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                main();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                ballSlides();
+            }
+            break;
+        }           }
+}
+
+void ballSlides()
+{
+    
+    int choice, count, i, navigate;
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Ball Slides exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Ball Slides demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/straightLegRaise.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2:
+        {
+            cout << "Ball Slides: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n";
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break;
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+                    
+                    
+            }
+            count = 0;
+            for (i = 0 ; i < 3 ; i++) //iterate through the recorded pain ratings
+                if (painRating[i] > 4)
+                    count++;
+            if (count > 0)// if they felt too much pain, they are directed to an easier set of exercises
+            {
+                cout << "You're done, try harder next time\n";
+                sleep(1);   //I put a sleep in here so people would see their individual feedback before continuing on
+                main();
+            }
+            else
+            {
+                cout << "You did a great job, continue on bravely\n";
+                sleep(1);
+                stoolScoots();
+            }
+            break;
+        }           }
+}   
+
+void stoolScoots()
+{
+    
+    int choice, count, i, navigate; 
+    const int setNumber = 3;
+    int painRating[3]; // to store your pain entries
+    clearScreen();
+    cout << "This is the Stool Scoots exercise.\n"; // instructions to the user
+    cout << "Press 1 to view the Stool Scoots demonstration, press 2 to skip\n";
+    cout << "directly to your exercise, or press 3 to return to the main menu.\n";
+    cin >> choice;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Please select 1, 2 or 3.\n";
+        cin >> choice;
+    }
+    switch (choice)
+    {
+        case 3: main();
+            break;
+        case 1: system("open http://hills.ccsf.edu/~dduffyha/quadset.gif");  // opens a link in a web browser, bad security risk though
+            
+        case 2: 
+        {
+            cout << "Stool Scoots: Complete 3 sets of 10 repetitions.\n";
+            cout << "Rate your pain level and press enter\n";
+            cout << "each exercise set on a scale of 1 to 10.\n";
+            cout << "is the least pain and 10 is the greatest.\n\n"; 
+            
+            
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "Pain rating of set "
+                << (count + 1) << ": ";
+                cin >> painRating[count];
+            }
+            
+            // Display the pain recorded after completing the exercises.
+            cout << "The pain level you recorded after each set is: ";      // Figure out a way to record this information.
+            for (count = 0; count < setNumber; count++)
+            {
+                cout << "\t\n" << painRating[count];
+            }
+            cout << "\n\nTo continue with your exercise plan, press 1, press 2 to pick a new" //prompts the user to continue
+            << "\nbodypart to work on, or press 3 to exit\n";
+            cin >> navigate;
+            switch(navigate) //the switch for navigate, anything other than exit or change exercise yields in continuing your
+            //work out, don't cheat yourself, treat yourself.
+            {
+                case 3: exit(0);
+                    break; 
+                case 2: exercises();
+                case 1:
+                    break;
+                default:
+                    break;
+            } 
+            cout << "Good Job, you made it.  Go enjoy a norco, beastmode.\n";
+            sleep(1);
+            main();            
+        }
+    }
+}   
+
+
+
